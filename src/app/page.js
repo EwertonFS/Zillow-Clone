@@ -39,7 +39,7 @@ const getProperties = async () => {
         }
 }
       `,
-     
+
     }),
   });
 
@@ -53,18 +53,17 @@ const getProperties = async () => {
 
 const Home = async () => {
 
-  
+
   const properties = await getProperties();
   // console.log(properties);
 
-  const locations = properties.map((property) => property.location);
-  // console.log(locations);
+
 
   return (
     <>
       <Navbar />
       <Grid properties={properties} />
-     
+
     </>
   );
 };

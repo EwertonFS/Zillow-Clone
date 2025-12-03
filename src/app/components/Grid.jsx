@@ -7,18 +7,15 @@ import Map from "./Map";
 const Grid = ({ properties }) => {
   const [input, setInput] = useState("");
   const [houses, setHouse] = useState(properties);
-  const [locations, setLocations] = useState(
-    houses.map((house) => house.location)
-  );
+
+  const locations = houses.map((house) => house.location);
 
   function setInputAndMapLocations(value) {
     setInput(value);
-    setHouse(
-      properties.filter((property) =>
-        property.name.toLowerCase().includes(value.toLowerCase())
-      )
+    const filteredHouses = properties.filter((property) =>
+      property.name.toLowerCase().includes(value.toLowerCase())
     );
-    setLocations(houses.map((house) => house.location));
+    setHouse(filteredHouses);
   }
 
   return (
